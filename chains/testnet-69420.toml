@@ -1,0 +1,88 @@
+chain_id     = 69420
+network      = "testnet-69420"
+display_name = "Monolythium Testnet"
+description  = "Live development testnet for Monolythium v2 / LythiumDAG-BFT. Foundation-operated. Wipe + regenesis is allowed without notice — do NOT store value on this network."
+
+# Pinned to the genesis the live cluster is currently running. Any
+# wipe + regenesis flips this hash and bumps the registry entry.
+genesis_hash = "0x0000000000000000000000000000000000000000000000000000000000000000"
+
+# Short SHA of the mono-core commit each foundation validator was
+# built from. Track production releases at
+# https://github.com/monolythium-vision/mono-core
+binary_sha   = "ef18a6d"
+
+# ---- Foundation RPC endpoints ----
+# Order = first-touch preference. Clients walk top-to-bottom and pick
+# the first reachable endpoint. After connection the SDK switches to
+# on-chain `node-registry` (precompile 0x1005) for live peer selection.
+
+[[rpc]]
+url      = "http://178.105.12.9:8545"
+provider = "monolythium-foundation"
+region   = "fsn1"
+tier     = "official"
+notes    = "val-1; primary foundation seed"
+
+[[rpc]]
+url      = "http://178.105.15.216:8545"
+provider = "monolythium-foundation"
+region   = "fsn1"
+tier     = "official"
+notes    = "val-2"
+
+[[rpc]]
+url      = "http://178.104.233.182:8545"
+provider = "monolythium-foundation"
+region   = "nbg1"
+tier     = "official"
+notes    = "val-3"
+
+[[rpc]]
+url      = "http://65.108.94.1:8545"
+provider = "monolythium-foundation"
+region   = "hel1"
+tier     = "official"
+notes    = "val-4"
+
+[[rpc]]
+url      = "http://95.216.154.155:8545"
+provider = "monolythium-foundation"
+region   = "hel1"
+tier     = "official"
+notes    = "val-5"
+
+[[rpc]]
+url      = "http://87.99.145.48:8545"
+provider = "monolythium-foundation"
+region   = "ash"
+tier     = "official"
+notes    = "val-6; US east"
+
+[[rpc]]
+url      = "http://5.223.85.76:8545"
+provider = "monolythium-foundation"
+region   = "sin"
+tier     = "official"
+notes    = "val-7; APAC"
+
+# ---- P2P seeds ----
+# Multiaddrs include peer_id; fill in as the validator p2p identities
+# stabilise. A reader pulling this file can use them to bootstrap a
+# fresh node without going through an RPC first.
+#
+# TODO: replace placeholder peer_ids with the live identities
+# committed in mono-core's testnet-infra-setup.md once Nayiem confirms
+# the public publishing posture.
+
+# [[p2p]]
+# multiaddr = "/ip4/178.105.12.9/tcp/30303/p2p/<peer_id>"
+# region    = "fsn1"
+
+# ---- Explorers ----
+# Monoscan link lands once 8.D ships in Session 8. Holding the slot.
+
+# [[explorer]]
+# url  = "https://testnet.monoscan.example"
+# name = "Monoscan (testnet)"
+# kind = "monoscan"
