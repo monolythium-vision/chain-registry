@@ -5,12 +5,12 @@ description  = "Live development testnet for Monolythium v2 / LythiumDAG-BFT. Fo
 
 # Pinned to the genesis the live cluster is currently running. Any
 # wipe + regenesis flips this hash and bumps the registry entry.
-genesis_hash = "0x9e5c92dc48207755617a8067e57537717bed7d43a387a539b993505cb13626c2"
+genesis_hash = "0x325057e476b7be3730a22c92b9289f4a14a3414a2a081bd279b43eeba36b0075"
 
 # Short SHA of the mono-core commit each foundation validator was
 # built from. Track production releases at
 # https://github.com/monolythium-vision/mono-core
-binary_sha   = "b652fd7"
+binary_sha   = "44a9ec4"
 
 # ---- Foundation RPC endpoints ----
 # Order = first-touch preference. Clients walk top-to-bottom and pick
@@ -18,18 +18,11 @@ binary_sha   = "b652fd7"
 # on-chain `node-registry` (precompile 0x1005) for live peer selection.
 
 [[rpc]]
-url      = "http://178.105.12.9:8545"
-provider = "monolythium-foundation"
-region   = "fsn1"
-tier     = "official"
-notes    = "val-1; primary foundation seed"
-
-[[rpc]]
 url      = "http://178.105.15.216:8545"
 provider = "monolythium-foundation"
 region   = "fsn1"
 tier     = "official"
-notes    = "val-2"
+notes    = "val-2; primary foundation seed (val-1 offline pending bls.key reissue)"
 
 [[rpc]]
 url      = "http://178.104.233.182:8545"
@@ -71,10 +64,6 @@ notes    = "val-7; APAC"
 # the gossipsub mesh port; firewall §4 of testnet-infra-setup.md
 # pins the source-IP allowlist for incoming dials. Anyone joining
 # the mesh as a non-foundation peer needs to be added there too.
-
-[[p2p]]
-multiaddr = "/ip4/178.105.12.9/tcp/29898/p2p/12D3KooWL5wVP4WaZ4DFqsW5x5bpEvvuba85wnixHjVvAauzM1tA"
-region    = "fsn1"
 
 [[p2p]]
 multiaddr = "/ip4/178.105.15.216/tcp/29898/p2p/12D3KooWDKk9ALxqchazXGcRGbqyopWtAGRbf4WQFS2dABV7gQGb"
