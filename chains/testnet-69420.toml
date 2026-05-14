@@ -1,14 +1,14 @@
 chain_id     = 69420
 network      = "testnet-69420"
 display_name = "Monolythium Testnet"
-description  = "Live development testnet for Monolythium v2 / LythiumDAG-BFT. Foundation-operated. Wipe + regenesis is allowed without notice — do NOT store value on this network."
+description  = "Live development testnet for Monolythium v4.0 / LythiumDAG-BFT. Foundation-operated. Wipe + regenesis is allowed without notice — do NOT store value on this network."
 
 # Pinned to the genesis the live cluster is currently running. Any
 # wipe + regenesis flips this hash and bumps the registry entry.
 genesis_hash = "0x325057e476b7be3730a22c92b9289f4a14a3414a2a081bd279b43eeba36b0075"
 
-# Short SHA of the mono-core commit each foundation validator was
-# built from. Track production releases at
+# Short SHA of the mono-core commit each advertised foundation operator
+# was built from. Track production releases at
 # https://github.com/monolythium-vision/mono-core
 binary_sha   = "44a9ec4"
 
@@ -22,45 +22,45 @@ url      = "http://178.105.15.216:8545"
 provider = "monolythium-foundation"
 region   = "fsn1"
 tier     = "official"
-notes    = "val-2; primary foundation seed (val-1 offline pending bls.key reissue)"
+notes    = "operator-2; primary foundation seed (operator-1 offline pending BLS key reissue)"
 
 [[rpc]]
 url      = "http://178.104.233.182:8545"
 provider = "monolythium-foundation"
 region   = "nbg1"
 tier     = "official"
-notes    = "val-3"
+notes    = "operator-3"
 
 [[rpc]]
 url      = "http://65.108.94.1:8545"
 provider = "monolythium-foundation"
 region   = "hel1"
 tier     = "official"
-notes    = "val-4"
+notes    = "operator-4"
 
 [[rpc]]
 url      = "http://95.216.154.155:8545"
 provider = "monolythium-foundation"
 region   = "hel1"
 tier     = "official"
-notes    = "val-5"
+notes    = "operator-5"
 
 [[rpc]]
 url      = "http://87.99.145.48:8545"
 provider = "monolythium-foundation"
 region   = "ash"
 tier     = "official"
-notes    = "val-6; US east"
+notes    = "operator-6; US east"
 
 [[rpc]]
 url      = "http://5.223.85.76:8545"
 provider = "monolythium-foundation"
 region   = "sin"
 tier     = "official"
-notes    = "val-7; APAC"
+notes    = "operator-7; APAC"
 
 # ---- P2P seeds ----
-# libp2p multiaddrs for the 7 foundation validators. Port 29898 is
+# libp2p multiaddrs for the foundation operators advertised here. Port 29898 is
 # the gossipsub mesh port; firewall §4 of testnet-infra-setup.md
 # pins the source-IP allowlist for incoming dials. Anyone joining
 # the mesh as a non-foundation peer needs to be added there too.
